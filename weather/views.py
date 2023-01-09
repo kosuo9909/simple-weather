@@ -1,4 +1,5 @@
 import math
+from datetime import datetime
 
 from django.shortcuts import render
 import requests
@@ -51,5 +52,6 @@ def index(request):
         'temperature': math.ceil(temperature),
         'feels_like': feels_like,
         'name': name,
+        'date': datetime.now(),
     }
     return render(request, 'index.html', context=context)
